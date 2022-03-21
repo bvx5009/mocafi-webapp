@@ -6,22 +6,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## the solution is deployed to 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+http://mocafitechnicalassessment.s3-website-us-east-1.amazonaws.com/login
 
-## Running end-to-end tests
+## the solution implements
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+GET all users
+PATCH user
+DELETE user
+POST (create) user
 
-## Further help
+This project utilizes angular material library for the UI.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To login into the application use "Test@Test.com" email and "Test123" for password
+
+User should be able to edit or delete users by clicking ... to corresponding row
