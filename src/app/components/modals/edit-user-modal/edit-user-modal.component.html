@@ -1,0 +1,70 @@
+<h2>
+    <mat-icon style="margin-right:10px">
+        <span class="material-icons-outlined">
+            manage_accounts
+        </span>
+    </mat-icon>Edit User
+</h2>
+<form [formGroup]="updateUser">
+    <section fxLayout="row wrap" fxLayout.lt-lg="column" class="margin-bottom-1x">
+        <mat-form-field class="margin-right-1x" fxFlex="auto">
+            <mat-label>Name</mat-label>
+            <input type="text" #name matInput minlength="4" maxlength="50" formControlName="name"
+                placeholder="User's firstname and lastname" id="name" required>
+            <mat-hint>{{name.value?.length || 0}}/50</mat-hint>
+            <mat-error>
+                Name is required, can only contain letters, and has minLength of 4
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="margin-right-1x" fxFlex="23">
+            <mat-label>Email</mat-label>
+            <input type="email" #email matInput minlength="4" maxlength="50" formControlName="email"
+                placeholder="Email" id="email" required>
+            <mat-hint>{{email.value?.length || 0}}/50</mat-hint>
+            <mat-error>
+                Email is required and must be in email format, and has minLength of 4
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="margin-right-1x" fxFlex="23">
+            <mat-label>Gender</mat-label>
+            <mat-select  formControlName="gender" #gender>
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+            <mat-error>
+                Gender is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="margin-right-1x" fxFlex="23">
+            <mat-label>Status</mat-label>
+            <mat-select  formControlName="status" #status>
+              <mat-option value="active">Active</mat-option>
+              <mat-option value="inactive">Inactive</mat-option>
+            </mat-select>
+            <mat-error>
+                Status is required
+            </mat-error>
+          </mat-form-field>
+    </section>
+    <div >
+
+       
+   
+</div>
+    <div *ngIf="errorMessages">
+        <div *ngFor="let err of errorMessages">
+            <mat-error>{{err.field}} {{err.message}}</mat-error>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end baseline">
+        <button (click)="submitUpdateUser()" class="margin-top-1x margin-right-1x"
+            [disabled]="(updateUser.invalid || updateUser.pristine)" mat-raised-button color="accent">
+            Update</button>
+        <button (click)="cancelUpdateUser()" class="margin-top-1x" mat-raised-button color="warn">
+            Cancel</button>
+    </div>
+
+</form>

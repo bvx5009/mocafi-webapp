@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-content>
+        <form class="login-form" [formGroup]="loginForm">
+            <h1>Login</h1>
+            <!-- Email Address Field -->
+            <mat-form-field class="login-full-width margin-bottom-1x">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. bob@login.com" id="email" required
+                    (focus)="resetError()">
+                    <mat-hint>Test@Test.com / Test123</mat-hint>
+                <mat-error *ngIf="(registerFormControl.email.invalid && registerFormControl.email.touched)">
+                    Please enter a valid email address
+                </mat-error>
+            </mat-form-field>
+            <!-- Main Password Field -->
+            <mat-form-field class="login-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="" id="pass" required
+                    (focus)="resetError()">
+                <mat-error *ngIf="(registerFormControl.password.invalid && registerFormControl.email.touched)">
+                    Password cannot be empty
+                </mat-error>
+            </mat-form-field>
+            <mat-error *ngIf="responseMessage" class="nudge">
+                {{responseMessage}}
+            </mat-error>
+            <!-- Main Login Button-->
+            <button (click)="submitLogin()" class="login-button" [disabled]="loginForm.invalid" mat-raised-button
+                color="accent">
+                Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>

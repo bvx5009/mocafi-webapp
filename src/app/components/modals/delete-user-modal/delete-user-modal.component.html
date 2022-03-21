@@ -1,0 +1,25 @@
+<h2>
+    <mat-icon style="margin-right:10px">
+        <span class="material-icons-outlined">
+            person_off
+        </span>
+    </mat-icon>Delete User
+</h2>
+
+<h2>
+    Are you sure you want to delete {{data.name}}? 
+</h2>
+<h3>
+    There is no coming back from this, we don't backup often
+</h3>
+<div *ngIf="errorMessages">
+    <div *ngFor="let err of errorMessages">
+        <mat-error>{{err.field}} {{err.message}}</mat-error>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="end baseline">
+    <button (click)="submitDeleteUser()" class="margin-top-1x margin-right-1x" mat-raised-button color="accent">
+        Yes, Delete</button>
+    <button (click)="cancelDeleteUser()" class="margin-top-1x" mat-raised-button color="warn">
+        Cancel</button>
+</div>

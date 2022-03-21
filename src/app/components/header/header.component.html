@@ -1,0 +1,11 @@
+<mat-toolbar color="primary"  class="mat-elevation-z2">
+    <button mat-icon-button aria-label="Example icon-button with menu icon">
+        <img class="header-logo" src="./../../../assets/logo.png">
+    </button>
+    <span  style="margin-left:9.5%">Technical Assessment</span>
+    <span class="example-spacer"></span>
+
+    <button (click)="logout()" mat-icon-button aria-label="logout" *ngIf="isLoggedIn">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
