@@ -13,7 +13,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## the solution is deployed to 
 
-http://mocafitechnicalassessment.s3-website-us-east-1.amazonaws.com/login
+http://mocafitechnicalassessment.s3-website-us-east-1.amazonaws.com
 
 ## the solution implements
 
